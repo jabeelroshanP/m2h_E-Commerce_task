@@ -4,6 +4,7 @@ import 'package:e_commerce/controller/bottomNavProvider/bottomNavProvider.dart';
 import 'package:e_commerce/controller/details_provider/details_provider.dart';
 import 'package:e_commerce/controller/e_provider.dart';
 import 'package:e_commerce/controller/home_providers/home_provider.dart';
+import 'package:e_commerce/view/Splash/splashPage.dart';
 import 'package:e_commerce/view/bottomNavBar/bottomNav.dart';
 import 'package:e_commerce/view/home/home.dart';
 import 'package:e_commerce/widget/responsive/responsive.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         home: Builder(
           builder: (context) {
             SizeConfig.init(context);
-            return const BottomNavPage();
+            return const Splashpage();
           },
         ),
       ),

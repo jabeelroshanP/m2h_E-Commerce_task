@@ -2,17 +2,39 @@ import 'package:e_commerce/constants/color_consts.dart';
 import 'package:e_commerce/constants/text_consts.dart';
 import 'package:e_commerce/controller/addToCartProvider/addToCartProvider.dart';
 import 'package:e_commerce/widget/container_Widget.dart';
- import 'package:e_commerce/widget/toast.dart';
+import 'package:e_commerce/widget/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
-
+  const CartPage({super.key, this.showBackButton = false});
+  final bool showBackButton;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
+      appBar: AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor:showBackButton ? AppColors.conatinerClr : AppColors.bgColor,
+      leading: showBackButton
+          ? Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: CircleAvatar(
+          backgroundColor: AppColors.mainColor,
+          child: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: AppColors.bgColor,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      )
+          : null,
+    ),
+
+    backgroundColor: AppColors.bgColor,
       body: Consumer<CartProvider>(
         builder: (context, cart, child) {
           if (cart.cartItems.isEmpty) {

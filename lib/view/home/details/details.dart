@@ -186,7 +186,7 @@ class DetailsPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CartPage()),
+                      MaterialPageRoute(builder: (context) => CartPage(showBackButton: true,)),
                     );
                   },
                   icon: Icon(

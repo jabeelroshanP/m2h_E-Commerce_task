@@ -79,9 +79,7 @@ class HomeContent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    value.status == MyStatus.loading
-                        ? CircularProgressIndicator(color: AppColors.mainColor)
-                        : SizedBox(
+                    SizedBox(
                             height: 8.h,
                             width: double.infinity,
                             child: Image.network(

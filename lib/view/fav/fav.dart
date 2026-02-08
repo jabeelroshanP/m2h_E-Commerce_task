@@ -35,8 +35,7 @@ class _FavoritePageState extends State<FavoritePage> {
               return Center(
                 child: Text(
                   TextConsts.noFavoritesYet,
-                  style: const TextStyle(fontSize: 16),
-                ),
+                  style: TextStyle(fontSize: 18, color: Colors.grey),),
               );
             }
 
